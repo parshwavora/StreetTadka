@@ -1,0 +1,468 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="dbstreattadka" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\dbstreattadka.mdf;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="dbstreattadkaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.salesmanarea" Member="salesmanareas">
+    <Type Name="salesmanarea">
+      <Column Name="sa_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="area_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sm_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.area" Member="areas">
+    <Type Name="area">
+      <Column Name="area_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="areaname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="isdiplay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="pincode" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.category" Member="categories">
+    <Type Name="category">
+      <Column Name="cat_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="catimage" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="isdisplay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.product" Member="products">
+    <Type Name="product">
+      <Column Name="p_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pimg" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="cat_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Member" Member="Members">
+    <Type Name="Member">
+      <Column Name="m_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="u_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="area_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.stallsalesman" Member="stallsalesmans">
+    <Type Name="stallsalesman">
+      <Column Name="ss_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="st_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sm_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="doj" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.stallowner" Member="stallowners">
+    <Type Name="stallowner">
+      <Column Name="st_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="u_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="st_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="st_pic" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="area_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="op_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="cl_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="sm_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="st_doj" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="cat_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tempcart" Member="Tempcarts">
+    <Type Name="Tempcart">
+      <Column Name="Tid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Pid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Pname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Prize" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Stallid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Stallname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PQ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Sid" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Uid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Pimg" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.orderdetails" Member="orderdetails">
+    <Type Name="orderdetail">
+      <Column Name="od_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="or_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="prize" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Stallid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="stallname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pq" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sid" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="uid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pimg" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.salesman" Member="salesmans">
+    <Type Name="salesman">
+      <Column Name="sm_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DoJ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DoB" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[E-mail]" Member="E_mail" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[Contact-Number]" Member="Contact_Number" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="isActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AreaId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SalesmenImg" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="ut_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Member" Member="Member1s">
+    <Type Name="Member1">
+      <Column Name="MId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MPassword" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MPic" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="DoJ" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateOfBirth" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[E-mail]" Member="E_mail" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ContactNo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="isActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ut_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.userdetails" Member="userdetails">
+    <Type Name="userdetail">
+      <Column Name="u_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="u_fname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="u_mname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="u_lname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="u_gender" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="u_dob" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="u_email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="u_phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ut_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="u_photo" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="u_address" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="u_pincode" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="u_username" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="u_password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="viewcount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lseen" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="visitcount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="isActive" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.orderss" Member="ordersses">
+    <Type Name="orderss">
+      <Column Name="or_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="date_of_order" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="u_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.salesmanarea" Member="salesmanarea1s">
+    <Type Name="salesmanarea1">
+      <Column Name="sa_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="area_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sm_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Balance" Member="Balances">
+    <Type Name="Balance">
+      <Column Name="Bid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ptid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Mid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateOFRecharge" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PackageType" Member="PackageTypes">
+    <Type Name="PackageType">
+      <Column Name="Ptid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PtName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.stallproduct" Member="stallproducts">
+    <Type Name="stallproduct">
+      <Column Name="sp_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="st_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="p_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pimage" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.feedback" Member="feedbacks">
+    <Type Name="feedback">
+      <Column Name="FId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Feedback" Member="Feedback1" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="UId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Uname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.salesmanupdate" Method="salesmanupdate">
+    <Parameter Name="sm_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="u_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="s_doj" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="area_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.smareainsert" Method="smareainsert">
+    <Parameter Name="area_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="sm_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.smareaupdate" Method="smareaupdate">
+    <Parameter Name="sa_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="area_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="sm_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.aupdate" Method="aupdate">
+    <Parameter Name="area_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="areaname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="isdisplay" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="pincode" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ainsert" Method="ainsert">
+    <Parameter Name="areaname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="isdisplay" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="pincode" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.soinsert" Method="soinsert">
+    <Parameter Name="u_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="st_name" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="st_pic" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="area_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="op_time" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="cl_time" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="sm_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="st_doj" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.soupdate" Method="soupdate">
+    <Parameter Name="st_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="u_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="st_name" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="st_pic" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="area_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="op_time" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="cl_time" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="sm_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="st_doj" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.adelete" Method="adelete">
+    <Parameter Name="area_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.salesmandelet" Method="salesmandelet">
+    <Parameter Name="sm_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.smareadelete" Method="smareadelete">
+    <Parameter Name="sa_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sodelete" Method="sodelete">
+    <Parameter Name="u_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.categoryupdate" Method="categoryupdate">
+    <Parameter Name="cat_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="catimage" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="isdispaly" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.categoryinsert" Method="categoryinsert">
+    <Parameter Name="cname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="catimage" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="isdispaly" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.categorydelete" Method="categorydelete">
+    <Parameter Name="cat_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.productdelete" Method="productdelete">
+    <Parameter Name="p_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.productinsert" Method="productinsert">
+    <Parameter Name="pname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pimg" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="cat_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.productupdate" Method="productupdate">
+    <Parameter Name="p_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pimg" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="cat_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.tempinsert" Method="tempinsert">
+    <Parameter Name="Pid" Parameter="pid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Pname" Parameter="pname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Prize" Parameter="prize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="StallId" Parameter="stallId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Stallname" Parameter="stallname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Quantity" Parameter="quantity" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PQ" Parameter="pQ" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Sid" Parameter="sid" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Uid" Parameter="uid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Pimg" Parameter="pimg" Type="System.String" DbType="VarChar(150)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.TempDelete" Method="TempDelete">
+    <Parameter Name="tid" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.orderdetail" Method="orderdetail">
+    <Parameter Name="o_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Pid" Parameter="pid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Pname" Parameter="pname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Prize" Parameter="prize" Type="System.Int32" DbType="Int" />
+    <Parameter Name="StallId" Parameter="stallId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Stallname" Parameter="stallname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Quantity" Parameter="quantity" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PQ" Parameter="pQ" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Sid" Parameter="sid" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Uid" Parameter="uid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Pimg" Parameter="pimg" Type="System.String" DbType="VarChar(150)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ordersss" Method="ordersss">
+    <Parameter Name="dateoforder" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="u_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.tempCartDelete" Method="tempCartDelete">
+    <Parameter Name="uId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.userdetailsupdate" Method="userdetailsupdate">
+    <Parameter Name="u_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="u_fname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="u_mname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="u_lname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="u_gender" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="u_dob" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="u_email" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="u_phone" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="u_utid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="u_photo" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="u_address" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="u_pincode" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="u_username" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="u_password" Type="System.String" DbType="VarChar(150)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.userdetailsdelete" Method="userdetailsdelete">
+    <Parameter Name="u_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Salesmen_register" Method="Salesmen_register">
+    <Parameter Name="Fname" Parameter="fname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Lname" Parameter="lname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DoJ" Parameter="doJ" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="DoB" Parameter="doB" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Contact" Parameter="contact" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Notes" Parameter="notes" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Address" Parameter="address" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="AreaId" Parameter="areaId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SalesmenImg" Parameter="salesmenImg" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="gender" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="UTID" Parameter="uTID" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.MemberInsert" Method="MemberInsert">
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Fname" Parameter="fname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Lname" Parameter="lname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Image" Parameter="image" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="DoJ" Parameter="doJ" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="DoB" Parameter="doB" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Contact" Parameter="contact" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Gender" Parameter="gender" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Address" Parameter="address" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="UTID" Parameter="uTID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.userdetailsinsert" Method="userdetailsinsert">
+    <Parameter Name="u_fname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="u_mname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="u_lname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="u_gender" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="u_dob" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="u_email" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="u_phone" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="u_utid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="u_photo" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="u_address" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="u_pincode" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="u_username" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="u_password" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="viewcount" Type="System.Int32" DbType="Int" />
+    <Parameter Name="lseen" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="visitcount" Type="System.Int32" DbType="Int" />
+    <Parameter Name="isActive" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.OrderDetailDelete" Method="OrderDetailDelete">
+    <Parameter Name="od_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SalesmenArea" Method="SalesmenArea">
+    <Parameter Name="areaId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="smId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Stallinsert" Method="Stallinsert">
+    <Parameter Name="StallName" Parameter="stallName" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="StallPic" Parameter="stallPic" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="OpenTime" Parameter="openTime" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="CloseTime" Parameter="closeTime" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="DoJ" Parameter="doJ" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="uId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="areaId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="sm_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.BalanceInsert" Method="BalanceInsert">
+    <Parameter Name="Ptid" Parameter="ptid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Mid" Parameter="mid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DoR" Parameter="doR" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="amount" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Packageinsert" Method="Packageinsert">
+    <Parameter Name="ptid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ptname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="amt" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateBalance" Method="UpdateBalance">
+    <Parameter Name="Ptid" Parameter="ptid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Mid" Parameter="mid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DoR" Parameter="doR" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="amount" Type="System.Int32" DbType="Int" />
+    <Parameter Name="uid" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ChangePassword" Method="ChangePassword">
+    <Parameter Name="uid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UserFeedback" Method="UserFeedback">
+    <Parameter Name="uid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="uname" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="feedback" Type="System.String" DbType="VarChar(200)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
